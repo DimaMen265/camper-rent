@@ -1,0 +1,13 @@
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.layoutTitle {
+  color: var(--primary-color-black);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 30px;
+}

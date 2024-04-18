@@ -1,45 +1,24 @@
-import { Route, Routes } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { refreshUser } from "../redux/auth/operations";
+import { Route, Routes, Navigate } from "react-router-dom";
+import { lazy } from "react";
+
 import { Header } from "./Header/Header";
-import { Contacts } from "pages/Contacts";
-import { Login } from "pages/Login";
-import { Register } from "pages/Register";
-import { PrivateRoute } from "./PrivateRoute";
-import { RestrictedRoute } from "./RestrictedRoute";
+
+const Welcome = lazy(() => import("../pages/Welcome/Welcome"));
+const Catalog = lazy(() => import("../pages/Catalog/Catalog"));
+const Favorites = lazy(() => import("../pages/Favorites/Favorites"));
+
+// import { Welcome } from "../pages/Welcome/Welcome";
+// import { Catalog } from "../pages/Catalog/Catalog";
+// import { Favorites } from "../pages/Favorites/Favorites";
 
 export const App = () => {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(refreshUser());
-    }, [dispatch]);
-
     return (
         <Routes>
             <Route path="/" element={<Header />}>
-                <Route
-                    path="/register"
-                    element={
-                        <RestrictedRoute redirectTo="/contacts" component={<Register />}
-                        />
-                    }
-                />
-                <Route
-                    path="/login"
-                    element={
-                        <RestrictedRoute redirectTo="/contacts" component={<Login />}
-                        />
-                    }
-                />
-                <Route
-                    path="/contacts"
-                    element={
-                        <PrivateRoute redirectTo="/login" component={<Contacts />}
-                        />
-                    }
-                />
+                <Route index element={<Welcome />} /> 
+                <Route path="/catalog" element={<Catalog />} />
+                <Route path="/favorites" element={<Favorites />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
         </Routes>
     );
