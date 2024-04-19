@@ -12,7 +12,7 @@ export const getAdverts = createAsyncThunk("adverts/getAll", async (_, thunkAPI)
     };
 });
 
-export const getAdvert = createAsyncThunk("adverts/getOne", async (_id, thunkAPI) => {
+export const getAdvert = createAsyncThunk("adverts/getOne", async ({ _id }, thunkAPI) => {
     try {
         const response = await axios.get(`/adverts/${_id}`);
         return response.data;

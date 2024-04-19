@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { ButtonLoadMore } from "../ButtonLoadMore/ButtonLoadMore";
+import { AdvertModal } from "../AdvertModal/AdvertModal";
 import clsx from "clsx";
 import styles from "./FavoriteList.module.css";
 import icons from "../../images/sprite.svg";
@@ -39,6 +40,14 @@ export const FavoriteList = () => {
     const isFavorite = (advertId) => {
         return favorites.some((item) => item._id === advertId);
     };
+
+    const [openModal, setOpenModal] = useState(false);
+    const [selectedAdvertId, setSelectedAdvertId] = useState(null);
+    const handleOpenModal = (advertId) => {
+        setSelectedAdvertId(advertId);
+        setOpenModal(true);
+    };
+    const handleCloseModal = () => setOpenModal(false);
 
     return (
         <>
@@ -120,11 +129,12 @@ export const FavoriteList = () => {
                                                 <p className={styles.detailText}>AC</p>
                                             </div>
                                         </div>
-                                        <button type="click" className={styles.buttonShowMore}>Show more</button>
+                                        <button type="click" onClick={() => handleOpenModal(advert._id)} className={styles.buttonShowMore}>Show more</button>
                                     </div>
                                 </li>
                             ))}
                         </ul>
+                        {openModal && <AdvertModal advertId={selectedAdvertId} onClose={handleCloseModal} />}
                         {
                             totalCount !== 0 &&
                             totalCount >= currentCount &&
