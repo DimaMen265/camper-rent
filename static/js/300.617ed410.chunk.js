@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcamper_rent=self.webpackChunkcamper_rent||[]).push([[300],{3300:function(e,c,a){a.r(c),a.d(c,{default:function(){return i}});a(2791);var n="Welcome_layoutContainer__9YB2b",t="Welcome_layoutTitle__2ZieR",r=a(7483),s=a(184),i=function(){return(0,s.jsxs)("div",{className:n,children:[(0,s.jsx)("img",{src:r,alt:"Camper"}),(0,s.jsx)("h1",{className:t,children:"Welcome!"})]})}},7483:function(e,c,a){e.exports=a.p+"static/media/camper.92aea549d58c25c096ee.png"}}]);
+//# sourceMappingURL=300.617ed410.chunk.js.map
