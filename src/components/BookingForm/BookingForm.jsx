@@ -24,24 +24,26 @@ export const BookingForm = ({ closing }) => {
         const newErrors = {};
         if (!formData.name.trim()) {
             newErrors.name = "Name is required";
-        }
+        };
+
         if (!formData.email.trim()) {
             newErrors.email = "Email is required";
         } else if (!isValidEmail(formData.email.trim())) {
             newErrors.email = "Invalid email address";
-        }
+        };
+
         if (!formData.date) {
             newErrors.date = "Date is required";
         } else if (!isValidDate(formData.date)) {
             newErrors.date = "Invalid date format. Please use YYYY-MM-DD";
-        }
+        };
 
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
         } else {
             console.log(formData);
             closing();
-        }
+        };
     };
 
     const isValidEmail = (email) => {

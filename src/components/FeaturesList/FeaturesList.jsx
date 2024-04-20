@@ -212,4 +212,4 @@ export const FeaturesList = () => {
             </div>
         </div>
     );
-}
+};

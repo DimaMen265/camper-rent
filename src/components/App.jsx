@@ -7,10 +7,6 @@ const Welcome = lazy(() => import("../pages/Welcome/Welcome"));
 const Catalog = lazy(() => import("../pages/Catalog/Catalog"));
 const Favorites = lazy(() => import("../pages/Favorites/Favorites"));
 
-// import { Welcome } from "../pages/Welcome/Welcome";
-// import { Catalog } from "../pages/Catalog/Catalog";
-// import { Favorites } from "../pages/Favorites/Favorites";
-
 export const App = () => {
     return (
         <Routes>
