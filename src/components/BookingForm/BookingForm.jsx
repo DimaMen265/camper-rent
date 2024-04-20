@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import styles from "./BookingForm.module.css";
+import icons from "../../images/sprite.svg";
 
 export const BookingForm = ({ closing }) => {
     const [formData, setFormData] = useState({
@@ -31,6 +32,8 @@ export const BookingForm = ({ closing }) => {
         }
         if (!formData.date) {
             newErrors.date = "Date is required";
+        } else if (!isValidDate(formData.date)) {
+            newErrors.date = "Invalid date format. Please use YYYY-MM-DD";
         }
 
         if (Object.keys(newErrors).length > 0) {
@@ -44,6 +47,11 @@ export const BookingForm = ({ closing }) => {
     const isValidEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+    };
+
+    const isValidDate = (date) => {
+        const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+        return dateRegex.test(date);
     };
 
     return (
@@ -76,9 +84,9 @@ export const BookingForm = ({ closing }) => {
                         />
                         {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
                     </div>
-                    <div>
+                    <div className={styles.dateContainer}>
                         <input
-                            type="date"
+                            type="text"
                             name="date"
                             placeholder="Booking date"
                             className={styles.input}
@@ -86,6 +94,9 @@ export const BookingForm = ({ closing }) => {
                             onChange={handleChange}
                         />
                         {errors.date && <p className={styles.errorMessage}>{errors.date}</p>}
+                        <svg width={20} height={20} className={styles.iconCalendar}>
+                            <use href={`${icons}#icon-calendar`}></use>
+                        </svg>
                     </div>
                     <div>
                         <textarea

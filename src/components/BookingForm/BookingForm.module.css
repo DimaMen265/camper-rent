@@ -39,6 +39,10 @@
   gap: 14px;
 }
 
+.dateContainer {
+  position: relative;
+}
+
 .input {
   color: var(--primary-color-black);
   font-size: 16px;
@@ -54,6 +58,18 @@
   color: rgba(16, 24, 40, 0.6);
   font-size: 16px;
   line-height: 20px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.iconCalendar {
+  fill: transparent;
+  stroke: var(--primary-color-black);
+  position: absolute;
+  top: 18px;
+  right: 18px;
 }
 
 .errorMessage {
@@ -80,6 +96,10 @@
   color: rgba(16, 24, 40, 0.6);
   font-size: 16px;
   line-height: 20px;
+}
+
+.comment:focus {
+  outline: none;
 }
 
 .buttonForm {

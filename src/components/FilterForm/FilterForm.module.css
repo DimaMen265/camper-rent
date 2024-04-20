@@ -44,6 +44,10 @@
   line-height: 20px;
 }
 
+.locationInput:focus {
+  outline: none;
+}
+
 .iconLocation {
   fill: transparent;
   stroke: var(--primary-color-black);
