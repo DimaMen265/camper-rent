@@ -85,7 +85,7 @@ export const FavoriteList = () => {
                                                     <svg width={16} height={16} className={styles.iconWrapper}>
                                                         <use href={`${icons}#icon-location`}></use>
                                                     </svg>
-                                                    <p className={styles.textLocation}>{advert.location}</p>
+                                                    <p className={styles.textLocation}>{advert.location.split(",").reverse().join(", ")}</p>
                                                 </div>
                                             </div>
                                         </div>

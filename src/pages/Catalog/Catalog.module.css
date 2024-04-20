@@ -1,0 +1,5 @@
+.catalogContainer {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+}

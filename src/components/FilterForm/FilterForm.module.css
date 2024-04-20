@@ -1,0 +1,133 @@
+.filterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 360px;
+}
+
+.locationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+.formText {
+  color: rgba(16, 24, 40, 0.6);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.formTitle {
+  color: var(--primary-color-black);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.locationInput {
+  color: var(--primary-color-black);
+  font-size: 16px;
+  line-height: 20px;
+  background-color: var(--secondary-color-white);
+  border: none;
+  border-radius: 10px;
+  width: 298px;
+  padding: 18px;
+  padding-left: 44px;
+}
+
+.locationInput::placeholder {
+  color: rgba(16, 24, 40, 0.6);
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.iconLocation {
+  fill: transparent;
+  stroke: var(--primary-color-black);
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+}
+
+.iconWrapper {
+  fill: transparent;
+  stroke: var(--primary-color-black);
+}
+
+.iconWrapperSecond {
+  fill: var(--primary-color-black);
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.checkBoxsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+  padding-top: 24px;
+}
+
+.checkboxContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 110px;
+  height: 95px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 500ms ease-in-out;
+}
+
+.checkboxContainer:hover {
+  border-color: var(--primary-color-red);
+}
+
+.textCheck {
+  color: var(--primary-color-black);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.textCheckSub {
+  color: var(--primary-color-black);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+}
+
+.buttonSearch {
+  display: block;
+  margin-right: auto;
+  color: var(--primary-color-white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  background-color: var(--primary-color-red);
+  border-radius: 200px;
+  padding: 16px 60px;
+  transition: color 500ms ease-in-out;
+}
+
+.buttonSearch:hover {
+  background-color: var(--secondary-color-red);
+}

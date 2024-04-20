@@ -92,7 +92,7 @@ export const CatalogList = () => {
                                                     <svg width={16} height={16} className={styles.iconWrapper}>
                                                         <use href={`${icons}#icon-location`}></use>
                                                     </svg>
-                                                    <p className={styles.textLocation}>{advert.location}</p>
+                                                    <p className={styles.textLocation}>{advert.location.split(",").reverse().join(", ")}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -175,7 +175,7 @@ export const CatalogList = () => {
                 ) : (
                     <div className={styles.noContainer}>
                         <img src={camper} alt="Camper" />
-                        <h1 className={styles.noTitle}>No favorites adverts...</h1>
+                        <h1 className={styles.noTitle}>No adverts...</h1>
                     </div>
                 )
             }
