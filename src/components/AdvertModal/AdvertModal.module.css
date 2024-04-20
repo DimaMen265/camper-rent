@@ -68,6 +68,7 @@
   flex-direction: column;
   gap: 24px;
   border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+  position: relative;
 }
 
 .secondContent {
@@ -202,10 +203,10 @@
 .underlineFeatures {
   display: block;
   position: absolute;
-  bottom: -260px;
-  left: 40px;
+  bottom: -4px;
+  left: 0;
   width: 85px;
-  height: 6px;
+  height: 5px;
   background-color: var(--primary-color-red);
   transition: display 500ms ease-in-out;
 }
@@ -213,10 +214,10 @@
 .underlineReviews {
   display: block;
   position: absolute;
-  bottom: -260px;
-  left: 155px;
+  bottom: -4px;
+  left: 115px;
   width: 101px;
-  height: 6px;
+  height: 5px;
   background-color: var(--primary-color-red);
   transition: display 500ms ease-in-out;
 }
