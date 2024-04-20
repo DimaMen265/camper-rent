@@ -6,7 +6,8 @@
   --primary-color-red: #e44848;
   --primary-color-yellow: #ffc531;
   --primary-color-light-gray: #f2f4f7;
-  --primary-color-white: #f7f7f7;
+  --primary-color-white: #ffffff;
+  --secondary-color-white: #f7f7f7;
   --secondary-color-red: #d84343;
 }
 
@@ -22,6 +23,19 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 7px;
 }
 
 code {

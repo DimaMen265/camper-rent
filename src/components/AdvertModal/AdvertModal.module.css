@@ -20,14 +20,15 @@
 
 .modal {
   position: absolute;
-  top: 75%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--primary-color-white);
   padding: 40px;
   border-radius: 20px;
   z-index: 10;
-  width: 982px;
+  width: 902px;
+  max-height: 672px;
   overflow: auto;
   opacity: 1;
   transition: opacity 500ms ease-in-out;
@@ -42,10 +43,24 @@
   padding: 40px;
   border-radius: 20px;
   z-index: 10;
-  width: 982px;
+  width: 902px;
+  max-height: 672px;
   overflow: auto;
   opacity: 0;
   transition: opacity 500ms ease-in-out;
+}
+
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: none;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 7px;
 }
 
 .content {
@@ -53,6 +68,13 @@
   flex-direction: column;
   gap: 24px;
   border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+}
+
+.secondContent {
+  display: flex;
+  gap: 24px;
+  border-top: 1px solid rgba(16, 24, 40, 0.2);
+  padding-top: 44px;
 }
 
 .headerModal {
@@ -126,6 +148,10 @@
   stroke: var(--primary-color-black);
 }
 
+.iconWrapperSecond {
+  fill: var(--primary-color-black);
+}
+
 .gallery {
   display: flex;
   gap: 16px;
@@ -152,7 +178,6 @@
 .additionalLinkContainer {
   display: flex;
   gap: 40px;
-  padding-bottom: 24px;
 }
 
 .additionalLink {
@@ -160,9 +185,38 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
+  cursor: pointer;
+  padding-bottom: 24px;
   transition: color 500ms ease-in-out;
 }
 
 .additionalLink:hover {
   color: var(--primary-color-red);
+}
+
+.underlineHidden {
+  display: none;
+  transition: display 500ms ease-in-out;
+}
+
+.underlineFeatures {
+  display: block;
+  position: absolute;
+  bottom: -260px;
+  left: 40px;
+  width: 85px;
+  height: 6px;
+  background-color: var(--primary-color-red);
+  transition: display 500ms ease-in-out;
+}
+
+.underlineReviews {
+  display: block;
+  position: absolute;
+  bottom: -260px;
+  left: 155px;
+  width: 101px;
+  height: 6px;
+  background-color: var(--primary-color-red);
+  transition: display 500ms ease-in-out;
 }

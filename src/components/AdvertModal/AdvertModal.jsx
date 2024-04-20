@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectSelectedAdvert } from "../../redux/selectors";
 import { getAdvert } from "../../redux/operations";
 
+import { FeaturesList } from "../FeaturesList/FeaturesList";
+import { ReviewsList } from "../ReviewsList/ReviewsList";
+import { BookingForm } from "../BookingForm/BookingForm";
 import styles from "./AdvertModal.module.css";
 import clsx from "clsx";
 import icons from "../../images/sprite.svg";
@@ -51,6 +54,19 @@ export const AdvertModal = ({ advertId, onClose }) => {
         };
     }, [onClose, handleClose]);
 
+    const [showFeatures, setShowFeatures] = useState(false);
+    const [showReviews, setShowReviews] = useState(false);
+
+    const handleFeaturesClick = () => {
+        setShowFeatures(true);
+        setShowReviews(false);
+    };
+
+    const handleReviewsClick = () => {
+        setShowFeatures(false);
+        setShowReviews(true);
+    };
+
     return (
         <div onClick={handleBackdropClick} className={clsx(
             isOpen && styles.backdrop,
@@ -86,7 +102,7 @@ export const AdvertModal = ({ advertId, onClose }) => {
                                 </div>
                             </div>
                         </div>
-                        <h2 className={styles.titleModal}>€{advert?.price}.00</h2>
+                        <h2 className={styles.titleModal}>€{advert?.price},00</h2>
                     </div>
                     <ul className={styles.gallery}>
                         {advert?.gallery.map((image, index) => (
@@ -98,11 +114,28 @@ export const AdvertModal = ({ advertId, onClose }) => {
                     <div className={styles.descriptionContainer}>
                         <p className={styles.description}>{advert?.description}</p>
                         <div className={styles.additionalLinkContainer}>
-                            <p className={styles.additionalLink}>Features</p>
-                            <p className={styles.additionalLink}>Reviews</p>
+                            <p onClick={handleFeaturesClick} className={styles.additionalLink}>Features</p>
+                            <p onClick={handleReviewsClick} className={styles.additionalLink}>Reviews</p>
                         </div>
                     </div>
+                    <div className={clsx(
+                        styles.underlineHidden,
+                        showFeatures && styles.underlineFeatures,
+                        showReviews && styles.underlineReviews,
+                    )}></div>
                 </div>
+                {showFeatures && (
+                    <div className={styles.secondContent}>
+                        <FeaturesList />
+                        <BookingForm closing={handleClose} />
+                    </div>
+                )}
+                {showReviews && (
+                    <div className={styles.secondContent}>
+                        <ReviewsList />
+                        <BookingForm closing={handleClose} />
+                    </div>
+                )}
             </div>
         </div>
     );
